@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Arial";
+  src: url("arial.ttf");
+  }
+  body
+{
+background-color: #DDDDDD;
+}
+
+#container
+{
+  padding:10px;
+  margin: auto;
+  color:black;
+  border-color:black;
+  border-style: ridge;
+  border-width:1;
+  box-shadow: 3px 3px 3px grey;
+  background-color: #FAFAFA;
+  text-align: center;
+  width:300px;
+  min-height:300px;
+  font-family: "Arial";
+  font-size: 12px;
+
+
+}
+#text1
+{
+  position:relative;
+  top:60px;
+  left:auto;
+  right:auto;
+  box-shadow: 1px 1px 1px grey;
+
+}
+#load_data
+{
+position:relative;
+top: 60px;
+left:auto;
+right:auto;
+border-style:hidden;
+border-radius: 4px;
+background-color: blue;
+color:white;
+}
+
+#result
+{
+  position: relative;
+  top:90px;
+  right:33;
+  left:45px;
+  text-align: left;
+  font-family:Arial;
+  line-height: 1.5em;
+  font-size: 14px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+table{
+  color:black;
+  box-shadow: 1px 1px 1px grey;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+th{
+  background-color: #ffffcf;
+}

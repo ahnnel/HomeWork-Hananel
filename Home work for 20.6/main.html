@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="container">
+  <p>Search for a name in the Database:</p>
+  <input type="text" id="text1">
+  <button id="load_data">Search</button>
+  <br/>
+  <div id="result"></div>
+  </div>
+
+<script>
+$(function()
+{
+  $("#load_data").click(function()
+  {
+    $.ajax(
+      {
+        url:"DB.csv",
+        dataType:"text",
+        success:function(data)
+        {
+          var cellData = data.split(/\r?\n|\r/);
+          var x=0; // Row
+          var y=0; // Col
+          var myWord = "";
+          var flag=false;
+          var word=document.getElementById('text1').value;
+          var temp;
+
+            for(x=0;x<cellData.length;x++)
+            {
+              y=0;
+              myWord="";
+
+                while(cellData[x][y]!=",")
+                {
+                  myWord+=cellData[x][y];
+                  y++;
+                }
+
+                if(myWord==word) //Match!
+                {
+                  temp = cellData[x]; //match row
+                  flag=true;
+                  break;
+                }
+            }
+
+
+            if (flag==true) //seperate age and car from the match row
+            {
+              var age="";
+              var car="";
+              var i=0;
+              while(cellData[x][i]!=",")
+              {
+                i++;
+              }
+              i++;
+              while(temp[i]!=",")
+              {
+                age+=temp[i];
+                i++;
+              }
+              i++;
+              while(i<temp.length)
+              {
+                car+=temp[i];
+                i++;
+              }
+
+              document.getElementById("result").style.color = "#00BB00";
+              document.getElementById("result").innerHTML = "<table id='table1'><tr><th>Name</th><th>Age</th><th>Car</th></tr><tr><td>"+myWord+"</td><td>"+age+"</td><td>"+car+"</td></tr></table>";
+              }
+              else
+              {
+              document.getElementById("result").style.color = "red";
+              document.getElementById("result").innerHTML ="Not found '"+word+"'";
+              }
+
+
+          }
+        });
+      });
+    });
+
+
+
+
+    </script>
+</body>
+
+</html>
