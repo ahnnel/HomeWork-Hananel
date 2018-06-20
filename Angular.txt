@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<div shem_element></div>
+
+
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("shemElement", function() {
+    return {
+        template : "<h1>create my element</h1>"
+    };
+});
+</script>
+
+</body>
+</html>
