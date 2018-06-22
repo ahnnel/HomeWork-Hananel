@@ -1,0 +1,27 @@
+#container
+{
+  margin:0px auto;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 3px grey;
+  background:linear-gradient(#eeeeee,#fefefe);
+  width: 800px;
+
+}
+  .textInput
+{
+    margin:3px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px grey;
+}
+
+#textArea1
+{
+  position:static;
+  width:400px;
+  height:400px;
+margin: auto;
+box-shadow: 3px 3px 3px grey;
+}
