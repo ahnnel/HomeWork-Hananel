@@ -3,6 +3,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <link rel="stylesheet" href="css/master.css">
 <body>
+<style>
+input.ng-invalid{
+  background-color:grey;
+}
+input.ng-touched{
+  box-shadow:7px 7px 7px grey;
+}
+input.ng-empty{
+  border-style:dashed;
+}
+input.ng-valid{
+  background:linear-gradient(#00ff00,#00cce0);
+}
+
+</style>
 
   <div id="container" ng-app="myApp" ng-controller="myCtrl">
     <div style="width:400px; margin:auto;">
@@ -19,10 +34,13 @@
 
         Choose spacing:<input type="number" class="textInput" ng-model="textSpacing">
         <br/>
-        <form ng-app="" name="myForm" ng-init="ahnnel@gmail.com">
+        <form ng-app="" name="myForm" ng-init="myText='ahnnel@gmail.com'">
           Type your Email:
-          <input type="text" name="emailAddress" ng-model="text">
-          <span >the Email is {{myForm.emailAddress.$valid}}!</span>
+          <input type="email" name="emailAddress" ng-model="myText" required>
+<br>
+          <span>the Email is {{myForm.emailAddress.$dirty}}!</span>
+          <br><span>the Email is {{myForm.emailAddress.$touched}}!</span>
+          <br><span>the Email is {{myForm.emailAddress.$valid}}!</span>
       </p>
       <textarea id="textArea1" style="color:{{textColor}}; font-size:{{textSize}}px;text-transform:{{textTransform}};letter-spacing:{{textSpacing}}px;">
       </textarea>
