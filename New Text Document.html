@@ -5,13 +5,17 @@
 
 <div ng-app="myApp" ng-controller="myCtrl">
 Name: <input ng-model="name">
+Password: <input type="password" ng-model="password1">
 <h1>You entered: {{name}}</h1>
+<h1>You entered: {{password1}}</h1>
+
 </div>
 
 <script>
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
     $scope.name = "shem bar";
+	$scope.password1 = "123456";
 });
 </script>
 
