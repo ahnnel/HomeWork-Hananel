@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="css/master.css">
+<body>
+
+  <div id="container" ng-app="myApp" ng-controller="myCtrl">
+    <div style="width:400px; margin:auto;">
+      <p align="right">
+
+        Choose font-size:<input type="number" class="textInput" ng-model="textSize">
+        <br/>
+
+        Choose color:<input type="text" class="textInput" ng-model="textColor">
+        <br/>
+
+        Choose tranform:<input type="text" class="textInput" ng-model="textTransform">
+        <br/>
+
+        Choose spacing:<input type="number" class="textInput" ng-model="textSpacing">
+        <br/>
+        <form ng-app="" name="myForm" ng-init="ahnnel@gmail.com">
+          Type your Email:
+          <input type="text" name="emailAddress" ng-model="text">
+          <span >the Email is {{myForm.emailAddress.$valid}}!</span>
+      </p>
+      <textarea id="textArea1" style="color:{{textColor}}; font-size:{{textSize}}px;text-transform:{{textTransform}};letter-spacing:{{textSpacing}}px;">
+      </textarea>
+    </div>
+
+  </div>
+
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+    $scope.textColor = "blue";
+    $scope.textSize = 15;
+    $scope.textTransform = "none";
+    $scope.textSpacing=4;
+  });
+</script>
+</body>
+</html>
