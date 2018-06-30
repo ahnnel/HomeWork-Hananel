@@ -2,7 +2,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <style>
-input.ng-invalid {
+#input-1.ng-invalid {
     background-color: lightblue;
 }
 </style>
@@ -10,7 +10,7 @@ input.ng-invalid {
 
 <form ng-app="" name="myForm">
     Enter your name:
-    <input name="myName" ng-model="myText" required>
+    <input type="email" id="input-1" name="myName" ng-model="myText" required>
 </form>
 
 

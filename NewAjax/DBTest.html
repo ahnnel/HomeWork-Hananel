@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
  <head>
   <title>CSV File to HTML Table Using AJAX jQuery</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -8,8 +9,10 @@
  </head>
  <body>
 	<div id="DBHere">
-		
+
 	</div>
+  <input type="text" id="text1">
+
      <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
 
  </body>
@@ -23,34 +26,37 @@ $(function(){
 			dataType:"text",
 			success:function(data)
 			{
-				var cellData = data.split(/\r?\n|\r/);
-				var MyWord = "";
-				var flag = true;
-				
-			for(var i = 0 ; i <= cellData.length ; i++)	{
-				for( var j = 0 ; j<=cellData[i].length ; j++){
-					if( cellData[i][j] != ',' ){
-						MyWord+= cellData[i][j];
-						}
-					else if(MyWord == "Hadas Bar")
-						{
-						alert("Exist");
-						flag = false;
-						break;
-						}
-					else{
-						MyWord = "";
-						}
-				}
-				MyWord = "";
-				
+				var cellData =  data.split(/\r?\n|\r/);
+				var myWord = text1.value;
+				var flag = false;
+        var count=0;
+        for(x=0;x<myWord.length;x++)
+        {
+          for(a=0;a<cellData.length;a++)
+          {
+            if(cellData[a]==myWord[x])
+            {
+              flag=true;
+              break;
+            }
+            else
+            {
+              flag=false;
+            }
+          }
+        }
+		if(flag==true)
+  {
+    count++;
+
+  }
+  alert(count);
+  document.write(cellData);
 			}
-			if(flag == true){
-				alert(":(");
-			}
-		}
-				
-				
+
+
+
+
 });
 });
 });
